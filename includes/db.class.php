@@ -51,9 +51,9 @@ class db {
 		}
 	}
 	
-	function getOne($query) {
+	function getOne($query,$data) {
 		$result = $this->conn->prepare($query);
-		$ret = $result->execute();
+		$ret = $result->execute($data);
 		if (!$ret) {
 		   echo 'PDO::errorInfo():';
 		   echo '<br />';
